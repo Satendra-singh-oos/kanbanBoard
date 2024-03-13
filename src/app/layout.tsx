@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Notebook } from "lucide-react";
 import { Toaster } from "react-hot-toast";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,15 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Toaster position="top-center" />
-        <header className="bg-blue-600 p-4 ">
-          <a
-            href=""
-            className="logo flex gap-2 text-gray-200 font-bold text-2xl pl-20"
-          >
-            <Notebook width={29} height={29} />
-            KanbanBoard
-          </a>
-        </header>
+        <Header />
         <main>{children}</main>
       </body>
     </html>
