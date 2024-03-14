@@ -9,18 +9,18 @@ export default async function Header() {
   const session = await getServerSession(authOptions);
   return (
     <header className="bg-blue-600 p-4 ">
-      <div className="flex justify-between items-center ">
+      <div className="flex justify-between items-center flex-col  sm:flex-row">
         <a
-          href=""
+          href="/"
           className="logo flex gap-2 text-gray-200 font-bold text-2xl pl-20"
         >
           <Notebook width={29} height={29} />
           KanbanBoard
         </a>
-        <div>
+        <div className="mt-4 sm:mt-0">
           {session && (
             <>
-              <span className="text-white ">Hello,{session?.user?.name}</span>
+              <span className="text-white  ">Hello,{session?.user?.name}</span>
               <LogoutBtn />
             </>
           )}
